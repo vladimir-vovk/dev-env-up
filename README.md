@@ -12,10 +12,10 @@ Setup develop environment with saltstack.
 
 2. Configure minion /etc/salt/minion.
 
-file_roots:
-  base:
-    - /srv/salt
+  file_roots:
+    base:
+      - /srv/salt
   
 3. Run salt state.
 
-salt-call state.highstate --local
+  salt-call state.highstate --local
