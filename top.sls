@@ -1,3 +1,4 @@
-tmux:
-  pkg.installed
+base:
+  '*':
+    - packages
 
