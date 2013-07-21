@@ -8,17 +8,23 @@ Setup develop environment with saltstack.
    sudo apt-get install python-software-properties
    sudo add-apt-repository ppa:saltstack/salt
    sudo apt-get update
-   sudo apt-get install salt-minion
+   sudo apt-get install salt-minion git
    ```
 
-2. Configure minion /etc/salt/minion.
+2. Get files for salt.
+   ```
+   sudo mkdir -d /srv/salt/
+   sudo git clone https://github.com/vladimir-vovk/dev-env-up.git /srv/salt
+   ```
+
+3. Configure minion /etc/salt/minion.
    ```
    file_roots:
       base:
-        - /srv/salt
+        - /srv/salt/
    ```
   
-3. Run salt state.
+4. Run salt state.
    ```
    salt-call state.highstate --local
    ```
