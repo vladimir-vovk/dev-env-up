@@ -26,5 +26,5 @@ Setup develop environment with saltstack.
   
 4. Run salt state.
    ```
-   salt-call state.highstate --local
+   sudo salt-call state.highstate --local
    ```
