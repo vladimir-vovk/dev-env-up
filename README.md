@@ -1,7 +1,7 @@
 dev-env-up
 ==========
 
-Setup develop environment with saltstack.
+Setup develop environment for python-django (or anything else) with saltstack.
 
 Why do we need it? Let's imagine we just installed our system or created new virtual machine. 
 To start develop we need many tools (favorite editor, framework, libraries, databases, etc).
