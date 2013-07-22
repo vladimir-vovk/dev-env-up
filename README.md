@@ -3,6 +3,11 @@ dev-env-up
 
 Setup develop environment with saltstack.
 
+Why do we need it? Let's imagine we just installed our system or created new virtual machine. 
+To start develop we need many tools (favorite editor, framework, libraries, databases, etc).
+We can install all of this by hand every time... or write "salt state" one time and then 
+just run salt every time we need it. ;)
+
 1. Install salt-minion.
    ```
    sudo apt-get install python-software-properties
@@ -11,7 +16,7 @@ Setup develop environment with saltstack.
    sudo apt-get install salt-minion git
    ```
 
-2. Get files for salt.
+2. Get salt state files.
    ```
    sudo mkdir -d /srv/salt/
    sudo git clone https://github.com/vladimir-vovk/dev-env-up.git /srv/salt
