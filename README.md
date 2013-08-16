@@ -3,10 +3,17 @@ dev-env-up
 
 Setup develop environment for python-django (or anything else) with saltstack.
 
-Why do we need it? Let's imagine we just installed our system or created new virtual machine. 
-To start develop we need many tools (favorite editor, framework, libraries, databases, etc).
-We can install all of this by hand every time... or write "salt state" one time and then 
-just run salt every time we need it. ;)
+Why do we need it? Let's imagine we just installed our favourite system or
+created new virtual machine. To start develop we need many tools (environment
+settings, editors, frameworks, libraries, databases, etc).
+We can install all of this things by hand every time... or automate this process.
+Why do not use "salt state" for this task... ;)
+
+Just run:
+```
+wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
+```
+or do all things manualy:
 
 1. Install salt-minion.
    ```
@@ -22,14 +29,7 @@ just run salt every time we need it. ;)
    sudo git clone https://github.com/vladimir-vovk/dev-env-up.git /srv/salt
    ```
 
-3. Configure minion /etc/salt/minion.
-   ```
-   file_roots:
-      base:
-        - /srv/salt/
-   ```
-  
-4. Run salt state.
+3. Run salt state.
    ```
    sudo salt-call state.highstate --local
    ```
