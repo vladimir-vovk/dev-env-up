@@ -13,7 +13,7 @@ Just run:
 ```
 wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
 ```
-or do all things manualy:
+or do all things manually:
 
 1. Install salt-minion.
    ```
