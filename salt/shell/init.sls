@@ -1,2 +1,2 @@
 include:
-  - bash/init.sls
+  - bash
