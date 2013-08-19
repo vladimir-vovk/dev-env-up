@@ -1,8 +1,9 @@
 {{ pillar['venv_dir'] }}:
-  file.managed:
+  file.directory:
     - mode: 755
     - user: {{ pillar['user'] }}
     - group: {{ pillar['group'] }}
+    - makedirs: True
 
 python-virtualenv:
   pkg.installed
