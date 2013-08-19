@@ -8,7 +8,7 @@ python-virtualenv:
   pkg.installed
 
 python-pip:
-  pkg.installed:
+  pkg.installed
 
 pip-pkgs:
   pip.install:
