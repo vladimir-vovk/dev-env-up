@@ -11,11 +11,11 @@ Why do not use Salt for this task? ;)
 
 1. Just run:
 
-```
-wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
-```
+   ```
+   wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
+   ```
 
-or do all this things manually:
+   or do all this things manually:
 
    ```
    # Install salt-minion.
