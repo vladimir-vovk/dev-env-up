@@ -1,4 +1,5 @@
 base:
   '*':
     - editors
-
+    - shell
+    - virtualenv
