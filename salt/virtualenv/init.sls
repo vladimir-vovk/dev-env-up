@@ -12,3 +12,6 @@ python-pip:
 
 virtualenvwrapper:
   pip.installed
+
+ipython:
+  pip.installed
