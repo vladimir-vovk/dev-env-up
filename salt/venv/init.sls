@@ -1,24 +1,21 @@
-{{ pillar['venv_dir'] }}:
-  file.directory:
-    - user: {{ pillar['user'] }}
-    - group: {{ pillar['group'] }}
-    - makedirs: True
+base-pkgs:
+  pkg.installed:
+    - pkgs:
+      - python-virtualenv:
+      - python-pip:
+      - python-dev
 
-python-virtualenv:
-  pkg.installed
+pip-base-pkgs:
+  pip.installed:
+    - names:
+      - virtualenvwrapper
+      - ipython
+      - fabric
 
-python-pip:
-  pkg.installed
-
-virtualenvwrapper:
-  pip.installed
-
-ipython:
-  pip.installed
-
-# project environment
-virtualenv:
-  create:
-    - path: {{ pillar['venv_dir'] }}/turbopork:
-    - no_site_packages: True
-    - runas: {{ pillar['user'] }}
+# if you need some project environment uncomment this
+# {{ pillar['venv_dir'] }}/project-name:
+#   virtualenv.managed:
+#     - no_site_packages: True
+#     - runas: {{ pillar['user'] }}
+#     - requirements: {{ pillar['venv_dir']}}/project-name/requirements.txt
+#     - requirements: salt://venv/requirements.txt

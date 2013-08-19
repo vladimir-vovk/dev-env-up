@@ -9,3 +9,6 @@ bash:
 
 tmux:
   pkg.installed
+
+mc:
+  pkg.installed
