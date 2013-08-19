@@ -10,21 +10,23 @@ We can install all of this things by hand every time... or automate this process
 Why do not use Salt for this task? ;)
 
 1. Just run:
+
 ```
 wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
 ```
+
 or do all this things manually:
 
-a. Install salt-minion.
    ```
+   # Install salt-minion.
+
    sudo apt-get install python-software-properties
    sudo add-apt-repository ppa:saltstack/salt
    sudo apt-get update
    sudo apt-get install salt-minion git
-   ```
 
-b. Get salt state files.
-   ```
+   # Get salt state files.
+
    sudo mkdir -d /srv/salt/
    sudo git clone https://github.com/vladimir-vovk/dev-env-up.git /srv
    ```
