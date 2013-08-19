@@ -1,5 +1,6 @@
 base:
   '*':
-    - editors
     - shell
-    - virtualenv
+    - venv
+    - editors
+    - services
