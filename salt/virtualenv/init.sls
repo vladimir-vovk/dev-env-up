@@ -10,8 +10,5 @@ python-virtualenv:
 python-pip:
   pkg.installed
 
-pip-pkgs:
+virtualenvwrapper:
   pip.installed:
-    - pkgs: virtualenvwrapper
-    - require:
-      - pkg: python-pip
