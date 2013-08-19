@@ -1,13 +1,13 @@
 dev-env-up
 ==========
 
-Setup develop environment for python-django (or anything else) with saltstack.
+Setup develop environment for python-django (or anything else) with Salt.
 
-Why do we need it? Let's imagine we just installed our favourite system or
+Why do we need this? Let's imagine we just installed our favourite system or
 created new virtual machine. To start develop we need many tools (environment
 settings, editors, frameworks, libraries, databases, etc).
 We can install all of this things by hand every time... or automate this process.
-Why do not use "salt state" for this task... ;)
+Why do not use Salt for this task? ;)
 
 1. Just run:
 ```
@@ -30,12 +30,12 @@ b. Get salt state files.
    ```
 
 2. Then adjust settings in /srv/pillar/settings/init.sls file. And look at
-   /srv/salt/top.sls state file. Comment what you don't want to install and
-   add state files for what you need to be installed.
+   /srv/salt/top.sls state file. Comment everything you don't want to install
+   and add state files for what you need to be installed.
 
 3. Run salt state.
    ```
    sudo salt-call state.highstate --local
    ```
 
-4. That's all! Enjoy! :)
+4. Enjoy! :)
