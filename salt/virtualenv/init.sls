@@ -10,5 +10,6 @@ python-virtualenv:
 python-pip:
   pkg.installed:
 
-pip.install:
-  virtualenvwrapper
+pip-pkgs:
+  pip.install:
+    - pkgs: virtualenvwrapper
