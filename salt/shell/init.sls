@@ -1,2 +1,2 @@
 include:
-  - shell/bash.sls
+  - shell.bash
