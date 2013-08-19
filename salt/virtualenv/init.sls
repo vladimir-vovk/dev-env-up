@@ -11,4 +11,4 @@ python-pip:
   pkg.installed
 
 virtualenvwrapper:
-  pip.installed:
+  pip.installed
