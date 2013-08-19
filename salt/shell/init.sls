@@ -1,5 +1,5 @@
 pkg.installed:
-  - bash
+  bash
 
 {{ pillar['home_dir'] }}/.bashrc:
   file:
@@ -8,4 +8,4 @@ pkg.installed:
     - template: jinja
 
 pkg.installed:
-  - tmux
+  tmux
