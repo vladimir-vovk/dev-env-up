@@ -28,5 +28,6 @@ ipython:
 {{ pillar['venv_dir'] }}/turbopork:
   virtualenv.managed:
     - no_site_packages: True
+    - pip: True
     - runas: {{ pillar['user'] }}
     - requirements: {{ pillar['user'] }}/requirements.txt
