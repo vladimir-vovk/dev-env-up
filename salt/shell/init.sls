@@ -1,5 +1,5 @@
 bash:
-  pkg.installed:
+  pkg.installed
 
 {{ pillar['home_dir'] }}/.bashrc:
   file:
@@ -7,5 +7,5 @@ bash:
     - source: salt://shell/.bashrc
     - template: jinja
 
-tmux
-  pkg.installed:
+tmux:
+  pkg.installed
