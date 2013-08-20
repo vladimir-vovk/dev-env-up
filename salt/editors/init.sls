@@ -1,2 +1,2 @@
 include:
-  - emacs.sls
+  - editors.emacs

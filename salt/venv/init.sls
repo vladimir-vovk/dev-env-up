@@ -4,7 +4,7 @@ base-pkgs:
       - python-virtualenv:
       - python-pip:
       - python-dev
-      
+
 pip-base-pkgs:
   pip.installed:
     - names:
