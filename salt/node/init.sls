@@ -8,7 +8,7 @@ salt://node/install_node.sh:
     - cwd: {{ pillar['home_dir'] }}
     - template: jinja
     - require:
-      - curl
+      - pkg.installed: curl
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
@@ -17,10 +17,8 @@ npm:
 
 npm install -g jshint:
   cmd.run:
-    - user: {{ pillar['user'] }}
-    - cwd: {{ pillar['home_dir'] }}
     - require:
-      - npm
+      - pkg.installed: npm
 
 # Install rlwrap to provide libreadline features with node
 # See: http://nodejs.org/api/repl.html#repl_repl
