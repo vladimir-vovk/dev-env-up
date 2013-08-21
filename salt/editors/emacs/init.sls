@@ -2,10 +2,7 @@ emacs_ppa:
   pkgrepo.managed:
     - ppa: cassou/emacs
     - require_in:
-      - pkgs:
-        - emacs24
-        - emacs24-el
-        - emacs24-common-non-dfsg
+      - pkgs: emacs_pkgs
 
 emacs_pkgs:
   pkg.installed:
@@ -21,7 +18,7 @@ emacs_pkgs:
     - dir_mode: 755
     - clean
 
-git@github.com:vladimir-vovk/emacs-config.git:
+https://github.com/vladimir-vovk/emacs-config.git:
   git.lastest:
     - target: {{ pillar['home_dir'] }}/.emacs.d
     - runas: {{ pillar['user'] }}
@@ -29,6 +26,7 @@ git@github.com:vladimir-vovk/emacs-config.git:
 pkg_requirements_emacs_config:
   pkg.installed:
     - pkgs:
+      - python-mode
       - pep8
       - aspell
       - aspell-ru

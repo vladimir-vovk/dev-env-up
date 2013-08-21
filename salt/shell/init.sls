@@ -1,14 +1,13 @@
-bash:
-  pkg.installed
+common-pkgs:
+  pkg.installed:
+    - pkgs:
+      - bash
+      - tmux
+      - mc
+      - tree
 
 {{ pillar['home_dir'] }}/.bashrc:
   file:
     - managed
     - source: salt://shell/.bashrc
     - template: jinja
-
-tmux:
-  pkg.installed
-
-mc:
-  pkg.installed
