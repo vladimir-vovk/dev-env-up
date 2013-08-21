@@ -5,4 +5,3 @@ common-pkgs:
   pkg.installed:
     - git
     - mercurial
-    
