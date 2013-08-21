@@ -19,7 +19,7 @@ emacs_pkgs:
     - clean: True
 
 https://github.com/vladimir-vovk/emacs-config.git:
-  git.lastest:
+  git.latest:
     - target: {{ pillar['home_dir'] }}/.emacs.d
     - runas: {{ pillar['user'] }}
 
