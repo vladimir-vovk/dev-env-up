@@ -1,8 +1,6 @@
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
-wget -O - https://raw.github.com/creationix/nvm/master/install.sh
-sh ./{{ pillar['home_dir'] }}/install.sh
-rm {{ pillar['home_dir'] }}/install.sh
+wget -O - https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
 source {{ pillar['home_dir'] }}/.nvm/nvm.sh

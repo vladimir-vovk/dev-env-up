@@ -7,6 +7,9 @@ salt://node/install_node.sh:
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
+npm:
+  pkg.installed
+
 npm install -g jshint:
   cmd.run:
     - user: {{ pillar['user'] }}
