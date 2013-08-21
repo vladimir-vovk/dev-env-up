@@ -3,5 +3,6 @@ include:
 
 tools-pkgs:
   pkg.installed:
-    - git
-    - mercurial
+    - pkgs:
+      - git
+      - mercurial
