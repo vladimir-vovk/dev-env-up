@@ -5,6 +5,7 @@ shell-pkgs:
       - tmux
       - mc
       - tree
+      - htop
 
 {{ pillar['home_dir'] }}/.bashrc:
   file:

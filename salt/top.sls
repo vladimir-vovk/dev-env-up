@@ -1,6 +1,8 @@
 base:
   '*':
+    - services
     - shell
     - tools
     - editors
-    - services
+    - python
+    - node

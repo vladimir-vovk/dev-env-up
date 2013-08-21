@@ -40,7 +40,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-# force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -82,9 +82,18 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alrtF --color --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
+alias dir='ls --color=auto --format=vertical'
+alias vdir='ls --color=auto --format=long'
+alias m='less'
+alias ..='cd ..'
+alias ...='cd ..;cd ..'
+alias md='mkdir'
+alias cl='clear'
+alias du='du -ch --max-depth=1'
+alias treeacl='tree -A -C -L 2'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -110,8 +119,35 @@ fi
 export WORKON_HOME={{ pillar['venv_dir'] }}
 source /usr/local/bin/virtualenvwrapper.sh
 
+# grep options
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;31' # green for matches
+
+# sort options
+# Ensures cross-platform sorting behavior of GNU sort.
+# http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
+unset LANG
+export LC_ALL=POSIX
+
+# Install rlwrap if not present
+# http://stackoverflow.com/a/677212
+command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
+
+# node.js and nvm
+# http://nodejs.org/api/repl.html#repl_repl
+alias node="env NODE_NO_READLINE=1 rlwrap node"
+alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
+export NODE_DISABLE_COLORS=1
+if [ -s ~/.nvm/nvm.sh ]; then
+    NVM_DIR=~/.nvm
+    source ~/.nvm/nvm.sh
+    nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
+fi
+
 # emacs
 export ALTERNATE_EDITOR=""
+export EDITOR='emacs -nw'
+export VISUAL='emacs -nw'
 alias e='emacsclient'
 
 # term color enhance

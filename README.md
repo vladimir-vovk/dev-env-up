@@ -32,8 +32,8 @@ Why do not use Salt for this task? ;)
    ```
 
 2. Then adjust settings in /srv/pillar/settings/init.sls file. And look at
-   /srv/salt/top.sls state file. Comment everything you don't want to install
-   and add state files for what you need to be installed.
+   /srv/salt/top.sls state file. Comment (with #) everything you don't want to
+   install and add state files for what you need to be installed.
 
 3. Run salt state.
    ```
