@@ -16,7 +16,6 @@ emacs_pkgs:
     - user: {{ pillar['user'] }}
     - group: {{ pillar['group'] }}
     - dir_mode: 755
-    - clean: True
 
 https://github.com/vladimir-vovk/emacs-config.git:
   git.latest:
