@@ -1,7 +1,7 @@
 include:
   - tools.venv
 
-common-pkgs:
+tools-pkgs:
   pkg.installed:
     - git
     - mercurial

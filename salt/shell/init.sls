@@ -1,4 +1,4 @@
-common-pkgs:
+shell-pkgs:
   pkg.installed:
     - pkgs:
       - bash

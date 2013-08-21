@@ -1,11 +1,11 @@
-base-pkgs:
+venv-pkgs:
   pkg.installed:
     - pkgs:
       - python-virtualenv:
       - python-pip:
       - python-dev
 
-pip-base-pkgs:
+pip-venv-pkgs:
   pip.installed:
     - names:
       - virtualenvwrapper
