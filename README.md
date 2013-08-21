@@ -27,7 +27,7 @@ Why do not use Salt for this task? ;)
 
    # Get salt state files.
 
-   sudo mkdir -d /srv/salt/
+   sudo mkdir /srv
    sudo git clone https://github.com/vladimir-vovk/dev-env-up.git /srv
    ```
 
