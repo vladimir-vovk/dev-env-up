@@ -1,5 +1,5 @@
-ssh:
-  pkg.installed
-
-postgresql:
-  pkg.installed
+services-pkgs:
+  pkg.installed:
+    - pkgs:
+      - ssh
+      - postgresql
