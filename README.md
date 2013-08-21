@@ -15,7 +15,7 @@ Why do not use Salt for this task? ;)
    wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
    ```
 
-   or do all this things manually:
+   or do all these things manually:
 
    ```
    # Install salt-minion.
