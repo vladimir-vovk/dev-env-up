@@ -12,7 +12,7 @@ Why do not use Salt for this task? ;)
 1. Just run:
 
    ```
-   wget -O - vladimir-vovk.github.io/dev-env-setup.sh | bash
+   wget -O - vladimir-vovk.github.io/dev-env-setup.sh | sh
    ```
 
    or do all these things manually:
