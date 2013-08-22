@@ -6,6 +6,7 @@ shell-pkgs:
       - mc
       - tree
       - htop
+      - w3m
 
 {{ pillar['home_dir'] }}/.bashrc:
   file:
