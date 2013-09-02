@@ -13,3 +13,8 @@ shell-pkgs:
     - managed
     - source: salt://shell/.bashrc
     - template: jinja
+
+{{ pillar['home_dir'] }}/.tmux.conf:
+  file:
+    - managed
+    - source: salt://shell/.tmux.conf
