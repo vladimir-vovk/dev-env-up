@@ -1,4 +1,7 @@
 # user name and group
+name: Vladimir Vovk
+email: vladimir@vovk.in
+
 user: vagrant
 group: vagrant
 

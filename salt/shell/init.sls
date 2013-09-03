@@ -18,3 +18,9 @@ shell-pkgs:
   file:
     - managed
     - source: salt://shell/.tmux.conf
+
+{{ pillar['home_dir'] }}/.gitconfig:
+  file:
+    - managed
+    - source: salt://shell/.gitconfig
+    - template: jinja
