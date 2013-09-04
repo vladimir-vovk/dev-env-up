@@ -24,3 +24,9 @@ shell-pkgs:
     - managed
     - source: salt://shell/.gitconfig
     - template: jinja
+
+{{ pillar['home_dir'] }}/.tmux-work:
+  file:
+    - managed
+    - source: salt://shell/.tmux-work
+    - mode 755

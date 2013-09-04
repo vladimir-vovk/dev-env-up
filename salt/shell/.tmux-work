@@ -1,0 +1,36 @@
+# *** server window ***
+tmux new-session -s work -n server -d
+
+tmux send-keys -t work 'workon tatami' C-m
+tmux send-keys -t work 'cdvirtualenv' C-m
+tmux send-keys -t work 'cd turbopork' C-m
+tmux send-keys -t work 'python manage.py runserver 192.168.1.54:8000' C-m
+
+tmux split-window -h -p 50 -t work
+tmux select-layout -t work main-vertical
+
+tmux send-keys -t work:1.2 'workon tatami' C-m
+tmux send-keys -t work:1.2 'cdvirtualenv' C-m
+tmux send-keys -t work:1.2 'cd turbopork' C-m
+tmux send-keys -t work:1.2 'python manage.py celery worker --loglevel=INFO' C-m
+
+# *** tatami window ***
+tmux new-window -n tatami -t work
+tmux send-keys -t work:2 'workon tatami' C-m
+tmux send-keys -t work:2 'cdvirtualenv' C-m
+tmux send-keys -t work:2 'cd turbopork' C-m
+
+tmux split-window -h -p 50 -t work:2
+tmux send-keys -t work:2.2 'workon tatami' C-m
+tmux send-keys -t work:2.2 'cdvirtualenv' C-m
+tmux send-keys -t work:2.2 'cd turbopork' C-m
+
+# *** common window ***
+tmux new-window -n common -t work
+tmux split-window -h -p 50 -t work:3
+
+# *** projects window ***
+tmux new-window -n projects -t work
+tmux send-keys -t work:4 'cd ~/projects' C-m
+tmux split-window -h -p 50 -t work:4
+tmux send-keys -t work:4.2 'cd ~/projects' C-m
