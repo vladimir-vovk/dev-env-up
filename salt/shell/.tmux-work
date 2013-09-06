@@ -7,7 +7,7 @@ then
   tmux send-keys -t work 'workon tatami' C-m
   tmux send-keys -t work 'cdvirtualenv' C-m
   tmux send-keys -t work 'cd turbopork' C-m
-  tmux send-keys -t work 'clean' C-m
+  tmux send-keys -t work 'clear' C-m
   tmux send-keys -t work 'python manage.py runserver 192.168.1.54:8000' C-m
 
   tmux split-window -h -p 50 -t work
@@ -16,7 +16,7 @@ then
   tmux send-keys -t work:1.2 'workon tatami' C-m
   tmux send-keys -t work:1.2 'cdvirtualenv' C-m
   tmux send-keys -t work:1.2 'cd turbopork' C-m
-  tmux send-keys -t work:1.2 'clean' C-m
+  tmux send-keys -t work:1.2 'clear' C-m
   tmux send-keys -t work:1.2 'python manage.py celery worker --loglevel=INFO' C-m
 
   # *** tatami window ***
@@ -24,13 +24,13 @@ then
   tmux send-keys -t work:2 'workon tatami' C-m
   tmux send-keys -t work:2 'cdvirtualenv' C-m
   tmux send-keys -t work:2 'cd turbopork' C-m
-  tmux send-keys -t work:2 'clean' C-m
+  tmux send-keys -t work:2 'clear' C-m
 
   tmux split-window -h -p 50 -t work:2
   tmux send-keys -t work:2.2 'workon tatami' C-m
   tmux send-keys -t work:2.2 'cdvirtualenv' C-m
   tmux send-keys -t work:2.2 'cd turbopork' C-m
-  tmux send-keys -t work:2.2 'clean' C-m
+  tmux send-keys -t work:2.2 'clear' C-m
 
   # *** common window ***
   tmux new-window -n common -t work
@@ -39,10 +39,10 @@ then
   # *** projects window ***
   tmux new-window -n projects -t work
   tmux send-keys -t work:4 'cd ~/projects' C-m
-  tmux send-keys -t work:4 'clean' C-m
+  tmux send-keys -t work:4 'clear' C-m
   tmux split-window -h -p 50 -t work:4
   tmux send-keys -t work:4.2 'cd ~/projects' C-m
-  tmux send-keys -t work:4.2 'clean' C-m
+  tmux send-keys -t work:4.2 'clear' C-m
 
   tmux select-window -t work:1
 fi
