@@ -1,0 +1,23 @@
+[ui]
+username = {{ pillar['name'] }} <{{ pillar['email'] }}>
+verbose = true
+merge = emacs
+editor = emacsclient
+
+[merge-tools]
+emacs.args = --eval "(require 'ediff)" --eval "(setq ediff-window-setup-function 'ediff-setup-windows-plain)" --eval "(add-hook 'ediff-quit-hook 'save-buffers-kill-emacs)" --eval "(ediff-merge-with-ancestor \""$local"\" \""$other"\" \""$base"\" nil \""$output"\")"
+
+[extensions]
+extdiff =
+color =
+graphlog =
+progress =
+rebase =
+
+[progress]
+delay = 1.5
+
+[extdiff]
+# add new command called ediff, runs emacs diff
+cmd.ediff = sh
+opts.ediff = -c 'if [ -d $0 ]; then emacs --eval "(ediff-directories \"$0\" \"$1\" \"\")"; else emacs --eval "(ediff-files \"$0\" \"$1\")"; fi'

@@ -10,6 +10,12 @@ tools-pkgs:
     - source: salt://tools/.gitconfig
     - template: jinja
 
+{{ pillar['home_dir'] }}/.hgrc:
+  file:
+    - managed
+    - source: salt://tools/.hgrc
+    - template: jinja
+
 # Install Heroku toolbelt
 # https://toolbelt.heroku.com/debian
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | bash:
