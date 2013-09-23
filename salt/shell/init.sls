@@ -3,6 +3,7 @@ shell-pkgs:
     - pkgs:
       - bash
       - tmux
+      - xclip
       - mc
       - tree
       - htop
