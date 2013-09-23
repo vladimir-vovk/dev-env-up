@@ -82,7 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alrtF --color --group-directories-first'
+alias ll='ls -al --color --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 alias dir='ls --color=auto --format=vertical'
