@@ -14,6 +14,11 @@ shell-pkgs:
     - source: salt://shell/.bashrc
     - template: jinja
 
+{{ pillar['home_dir'] }}/.inputrc:
+  file:
+    - managed
+    - source: salt://shell/.inputrc
+
 {{ pillar['home_dir'] }}/.tmux.conf:
   file:
     - managed
