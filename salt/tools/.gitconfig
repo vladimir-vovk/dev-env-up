@@ -31,6 +31,9 @@ co = checkout
 df = diff
 lg = log -p
 alias = "config --get-regexp 'alias.*'"
+mylog = log --pretty=format:'%h %s [%an]' --graph
+lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	
 
 [core]
 autocrlf = false
