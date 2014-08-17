@@ -25,8 +25,8 @@ shell-pkgs:
     - managed
     - source: salt://shell/.tmux.conf
 
-{{ pillar['home_dir'] }}/.tmux-work:
-  file:
-    - managed
-    - source: salt://shell/.tmux-work
-    - mode 755
+# {{ pillar['home_dir'] }}/.tmux-work:
+#   file:
+#     - managed
+#     - source: salt://shell/.tmux-work
+#     - mode 755
